@@ -1,0 +1,58 @@
+2009-12-12  Jay A. St. Pierre  <Jay.A.St.Pierre@lmco.com>
+
+	* Changed mux to bus creator blocks where appropriate.
+
+	* Added "Row Major to Matrix" and "Matrix to Row Major" blocks to
+	aid with interfacing with the matrix signals now available in
+	Simulink.
+
+	* release of 1.7
+
+2009-07-20  Jay A. St. Pierre  <Jay.St.Pierre at Colorado.EDU>
+
+	* Changed license from GPL to BSD
+	
+	* release of 1.5
+
+2002-01-22  Jay A. St. Pierre  <Jay.St.Pierre at Colorado.EDU>
+
+	* release of 1.4
+
+	* Contents.m: Fixed date field.
+
+
+2002-01-20  Jay A. St. Pierre  <Jay.St.Pierre at Colorado.EDU>
+	
+	* Improved help information 
+
+2001-12-14  Jay A. St. Pierre  <Jay.St.Pierre at Colorado.EDU>
+
+	* release of 1.3
+
+	* Modified unit tests to check for the existence of the test_tools
+	toolbox.
+	
+2001-09-02  Jay A. St. Pierre  <Jay.St.Pierre at Colorado.EDU>
+
+        * Modified masks to work with Simulink 4.0.  The default value of
+	the FontSize parameter for blocks has changed in Simulink 4.0 to a
+	value of -1.  This means use the DefaultBlockFontSize parameter
+	from the parent model to determine font size.  I can't find a way
+	to determine the value of DefaultBlockFontSize in the
+	initialization portion of the mask, so I assume it to be 10 (the
+	default font size when I created the library).
+
+2001-03-15  Jay A. St. Pierre  <Jay.St.Pierre at Colorado.EDU>
+
+	* release of 1.2
+
+	* Contents.m: Changed "Quaternion Integration" to "Quaternion
+	Propagation".  Updated dates, version number.
+
+	* qlib: Renamed "Quaternion Integration" to "Quaternion
+	Propagation", and fixed its internals.  The [w 0] "quaternion" and
+	the quaternion were being multiplied in the wrong order, and the
+	lack of an internal quaternion renormalization caused the output
+	to degrade and eventually become useless.
+
+

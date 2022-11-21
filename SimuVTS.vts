@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Revision="8200">
+ <General Name="" StartDateTime="59580 0.000000" EndDateTime="59580 9999.000000"/>
+ <MetaData>
+  <Description></Description>
+ </MetaData>
+ <MonitorConfiguration>
+  <Monitor X="0" Y="0" Height="1030" Width="1920"/>
+ </MonitorConfiguration>
+ <StartOptions TimeRatio="1" UseStateTimeRatio="0" SysTimeSynced="0" Paused="0" Looped="0" Minimized="0" Hidden="0" AutoClosed="0"/>
+ <TimelineOptions ProjectLocked="1" CursorLocked="0" CursorRatio="0" ViewStart="33282 0.000000" ViewSpan="0" DateFormat="ISODate" NoBadgeFiltered="0" BadgeFiltered=""/>
+ <Sky>
+  <Sun>
+   <Prop2d>
+    <Icon Anchor="CENTER" Size="MEDIUM" Opacity="100">
+     <Font Size="MEDIUM" Color="1 1 1"/>
+     <ImageLayer Type="Default"/>
+    </Icon>
+   </Prop2d>
+   <Track Color="0.862745 0.862745 0" PenStyle="SolidLine" PenWidth="2"/>
+   <VisibilityCircle ContourColor="0.501961 0.501961 0" FillColor="0 0 0" FillOpacity="50"/>
+  </Sun>
+  <StarCatalog CatalogMode="Builtin">
+   <Track Color="1 1 1" PenStyle="DotLine" PenWidth="1"/>
+  </StarCatalog>
+ </Sky>
+ <ToBeUsedApps>
+  <Application Name="SurfaceView" Id="0" Label="" AutoStarted="1"/>
+  <Application Name="Celestia" Id="1" Label="" AutoStarted="1"/>
+ </ToBeUsedApps>
+ <Entities>
+  <Body Name="Earth" ParentPath="Sol">
+   <Prop2d>
+    <Icon Anchor="CENTER" Size="MEDIUM" Opacity="100">
+     <Font Size="MEDIUM" Color="1 1 1"/>
+     <ImageLayer Type="Default"/>
+    </Icon>
+   </Prop2d>
+   <Track Color="1 0 0.125002" PenStyle="SolidLine" PenWidth="2"/>
+   <VisibilityCircle ContourColor="1 0 0.20383" FillColor="1 0.499992 0.601907" FillOpacity="60"/>
+   <EphemerisMode Mode="Default"/>
+   <Layers>
+    <BuiltinLayer Name="defaultLayer"/>
+   </Layers>
+  </Body>
+  <Satellite Name="IonSat" ParentPath="Sol/Earth">
+   <CommonProp>
+    <OrbitPath Color="0 0.922499 1" PenStyle="SolidLine" PenWidth="2"/>
+   </CommonProp>
+   <Prop2d>
+    <Icon Anchor="CENTER" Size="MEDIUM" Opacity="100">
+     <Font Size="MEDIUM" Color="1 1 1"/>
+     <ImageLayer Type="Default"/>
+    </Icon>
+   </Prop2d>
+   <Track Color="1 0.399664 0" PenStyle="SolidLine" PenWidth="2"/>
+   <VisibilityCircle ContourColor="0 0.850828 1" FillColor="0.499992 0.925414 1" FillOpacity="60"/>
+   <Component Name="IonSat">
+    <Graphics3d>
+     <File3ds Name="Data/3D Model/IonSatSimple.obj"/>
+     <Radius Value="1"/>
+     <LightSensitive Value="1"/>
+     <Use3dsCoords Value="0" MeshScale="1"/>
+     <AxesPosition Value="1"/>
+     <RotationCenter X="0" Y="0" Z="0"/>
+    </Graphics3d>
+    <Geometry>
+     <Position>
+      <Value>
+       <File Name="Data/data_pos&amp;speed.txt"/>
+      </Value>
+     </Position>
+     <Orientation>
+      <Quaternion>
+       <Value>
+        <File Name="Data/data_quaternions.txt"/>
+       </Value>
+      </Quaternion>
+     </Orientation>
+    </Geometry>
+    <SensorSatellite>
+     <Sensor Name="S-Band1">
+      <SensorProp>
+       <SensorElliptical HalfAngleX="1.0471975511966" HalfAngleY="1.0471975511966"/>
+       <SensorGraphics Range="10000" VolumeColor="0.499992 0.834577 1" VolumeOpacity="20" ContourColor="0 0.669169 1">
+        <SensorTrace Duration="0" Opacity="60"/>
+       </SensorGraphics>
+      </SensorProp>
+      <Geometry>
+       <Position>
+        <Value>
+         <Fixed Data="0.2 0 0"/>
+        </Value>
+       </Position>
+       <Orientation>
+        <Direction>
+         <Value>
+          <Fixed Data="1 0 0"/>
+         </Value>
+        </Direction>
+       </Orientation>
+      </Geometry>
+     </Sensor>
+    </SensorSatellite>
+    <SensorSatellite>
+     <Sensor Name="S-Band2">
+      <SensorProp>
+       <SensorElliptical HalfAngleX="1.0471975511966" HalfAngleY="1.0471975511966"/>
+       <SensorGraphics Range="10000" VolumeColor="0.499992 0.834577 1" VolumeOpacity="20" ContourColor="0 0.669169 1">
+        <SensorTrace Duration="0" Opacity="60"/>
+       </SensorGraphics>
+      </SensorProp>
+      <Geometry>
+       <Position>
+        <Value>
+         <Fixed Data="0 0 0"/>
+        </Value>
+       </Position>
+       <Orientation>
+        <Direction>
+         <Value>
+          <Fixed Data="0 0 -1"/>
+         </Value>
+        </Direction>
+       </Orientation>
+      </Geometry>
+     </Sensor>
+    </SensorSatellite>
+   </Component>
+   <Events/>
+  </Satellite>
+ </Entities>
+ <Events/>
+ <States>
+  <Instant Time="33282 0" TimeRatio="1" Label="Initial state">
+   <AppState Id="0">
+    <Command Str="CMD PROP WindowGeometry 0 0 640 475"/>
+    <Command Str="CMD PROP AlwaysOnTop true"/>
+   </AppState>
+   <AppState Id="1">
+    <Command Str="CMD PROP WindowGeometry 0 0 1920 1080"/>
+    <Command Str="CMD PROP WindowMenus true"/>
+    <Command Str="CMD STRUCT SunDirectionVisible &quot;Sol/Earth/IonSat&quot; true"/>
+    <Command Str="CMD STRUCT VelocityVectorVisible &quot;Sol/Earth/IonSat&quot; true"/>
+   </AppState>
+  </Instant>
+ </States>
+</Project>

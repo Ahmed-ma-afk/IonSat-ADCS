@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Info Type="StartUp" Visible="0" Icon="" File="ProjectTasks/cubeSatProjectStartup.m" Name="CubeSatProjectStartup">
+    <Extension Value="1981a3c4-e826-4e7a-a4be-c31ae8e391a4" Name="StartUpPrev" />
+</Info>
